@@ -18,8 +18,18 @@ class MyApp extends StatelessWidget {
           children: [
             ChatItem(
               imageUrl: "https://picsum.photos/id/1/200/300",
-              title: "Della",
-              subtitle: "Della Putri Herman",
+              title: faker.person.name(),
+              subtitle: faker.lorem.sentence(),
+            ),
+            ChatItem(
+              imageUrl: "https://picsum.photos/id/2/200/300",
+              title: faker.person.name(),
+              subtitle: faker.lorem.sentence(),
+            ),
+            ChatItem(
+              imageUrl: "https://picsum.photos/id/3/200/300",
+              title: faker.person.name(),
+              subtitle: faker.lorem.sentence(),
             ),
           ],
         ),
