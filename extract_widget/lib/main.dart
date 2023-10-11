@@ -14,24 +14,15 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Extract Widget"),
         ),
-        body: ListView(
-          children: [
-            ChatItem(
-              imageUrl: "https://picsum.photos/id/1/200/300",
+        body: ListView.builder(
+          itemCount: 100,
+          itemBuilder: (context, index) {
+            return ChatItem(
+              imageUrl: "https://picsum.photos/id/$index/200/300",
               title: faker.person.name(),
               subtitle: faker.lorem.sentence(),
-            ),
-            ChatItem(
-              imageUrl: "https://picsum.photos/id/2/200/300",
-              title: faker.person.name(),
-              subtitle: faker.lorem.sentence(),
-            ),
-            ChatItem(
-              imageUrl: "https://picsum.photos/id/3/200/300",
-              title: faker.person.name(),
-              subtitle: faker.lorem.sentence(),
-            ),
-          ],
+            );
+          },
         ),
       ),
     );
