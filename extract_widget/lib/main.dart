@@ -34,7 +34,7 @@ class ChatItem extends StatelessWidget {
   final String title;
   final String subtitle;
 
-  const ChatItem({this.imageUrl, this.title, this.subtitle});
+  const ChatItem({this.imageUrl = "", this.title = "", this.subtitle = ""});
 
   @override
   Widget build(BuildContext context) {
