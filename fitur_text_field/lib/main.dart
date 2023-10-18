@@ -18,14 +18,67 @@ class MyApp extends StatelessWidget {
             child: TextField(
               autocorrect: false,
               showCursor: true,
-              cursorColor: Colors.deepPurple,
+              cursorColor: Colors.pink,
               // cursorWidth: 10,
               // cursorHeight: 25,
               // cursorRadius: Radius.circular(20),
 
               textAlign: TextAlign.start,
               textAlignVertical: TextAlignVertical.center,
-              textCapitalization: TextCapitalization.words,
+              textCapitalization: TextCapitalization.none,
+
+              style: TextStyle(
+                color: Colors.pink,
+                fontSize: 20,
+              ),
+              obscureText: true,
+
+              decoration: InputDecoration(
+                fillColor: Colors.limeAccent,
+                filled: true,
+                icon: Icon(
+                  Icons.person,
+                  size: 35,
+                ),
+                border: OutlineInputBorder(),
+
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.black,
+                  ),
+                ),
+
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.pink,
+                  ),
+                ),
+
+                prefixIcon: Icon(Icons.add_a_photo),
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.remove_red_eye),
+                  onPressed: () {},
+                ),
+                // prefixIcon: Icon(
+                //   Icons.person_add,
+                //     size: 35,
+                // ),
+                //prefixText: "Name",
+                //   prefix: Icon(
+                //     Icons.person_add,
+                //       size: 35,
+                // ),
+                hintText: "Please input your name..",
+                hintStyle: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                ),
+                labelText: "Full name",
+                labelStyle: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                ),
+              ),
             ),
           ),
         ),
