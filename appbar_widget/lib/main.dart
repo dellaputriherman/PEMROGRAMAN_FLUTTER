@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         leading: Container(
           color: Colors.pinkAccent,
         ),
-        leadingWidth: 100,
+        leadingWidth: 50,
         title: Container(
           //width: 35,
           height: 35,
@@ -22,6 +22,28 @@ class MyApp extends StatelessWidget {
         ),
         //titleSpacing: 0,
         centerTitle: false,
+        actions: [
+          Container(
+            width: 50,
+            //height: 35,
+            color: Colors.red,
+          ),
+          Container(
+            width: 50,
+            //height: 35,
+            color: Colors.brown,
+          ),
+          Container(
+            width: 50,
+            //height: 35,
+            color: Colors.red,
+          ),
+          Container(
+            width: 50,
+            //height: 35,
+            color: Colors.brown,
+          ),
+        ],
       )),
     );
   }
