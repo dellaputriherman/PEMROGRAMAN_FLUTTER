@@ -1,18 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:routes/pages/photo_page.dart';
 
-class GalleryPage extends StatefulWidget {
+class GalleryPage extends StatelessWidget {
+  static const nameRoute = '/gallerypage';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Page"),
+        title: Text("Gallery Page"),
       ),
       body: Center(
-        child: Text(
-          "GALLERY PAGE",
-          style: TextStyle(
-            fontSize: 50,
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              "Gallery PAGE",
+              style: TextStyle(
+                fontSize: 50,
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text(
+                    "<<< Back",
+                    style: TextStyle(
+                      fontSize: 25,
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(PhotoPage.nameRoute);
+                  },
+                  child: Text(
+                    "Next >>",
+                    style: TextStyle(
+                      fontSize: 25,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
