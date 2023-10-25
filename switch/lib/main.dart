@@ -38,20 +38,12 @@ class _MyWidgetState extends State<MyHome> {
                 print(statusSwitch);
               },
             ),
-            if (statusSwitch == true)
-              Text(
-                "Switch On",
-                style: TextStyle(
-                  fontSize: 35,
-                ),
-              )
-            else
-              Text(
-                "Switch Off",
-                style: TextStyle(
-                  fontSize: 35,
-                ),
-              )
+            Text(
+              (statusSwitch == true) ? "Switch On" : "Switch Off",
+              style: TextStyle(
+                fontSize: 35,
+              ),
+            )
           ],
         ),
       ),
