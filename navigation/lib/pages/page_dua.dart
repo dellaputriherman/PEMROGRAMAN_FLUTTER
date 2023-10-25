@@ -6,6 +6,7 @@ class PageDua extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Page Dua"),
+        leading: Container(),
       ),
       body: Center(
         child: Text(
@@ -16,7 +17,9 @@ class PageDua extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
         child: Icon(Icons.keyboard_arrow_left),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
