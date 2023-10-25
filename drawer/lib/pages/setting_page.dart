@@ -1,25 +1,12 @@
 import 'package:drawer/pages/page_satu.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
+class SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Drawer"),
+        title: Text("Setting Page"),
       ),
       drawer: Drawer(
         child: Column(
@@ -61,9 +48,7 @@ class MyHomePage extends StatelessWidget {
             ListTile(
               onTap: () {
                 Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          SettingPage()), // Pastikan SettingPage sudah diimpor dengan benar
+                  MaterialPageRoute(builder: (context) => SettingPage()),
                 );
               },
               leading: Icon(
@@ -83,26 +68,6 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         child: Text(
           "Some Text Here!",
-          style: TextStyle(
-            fontSize: 35,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class SettingPage extends StatelessWidget {
-  // Tambahkan definisi SettingPage
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Setting Page"),
-      ),
-      body: Center(
-        child: Text(
-          "Ini adalah halaman Pengaturan",
           style: TextStyle(
             fontSize: 35,
           ),
