@@ -19,6 +19,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
+  int number = 0;
   @override
   void initState() {
     super.initState();
@@ -27,9 +28,12 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
+    print(state);
     switch (state) {
       case AppLifecycleState.inactive:
-        //....
+        setState(() {
+          number = 99;
+        });
         break;
       case AppLifecycleState.paused:
         //....
@@ -38,7 +42,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         //....
         break;
       case AppLifecycleState.resumed:
-        //....
+        setState(() {
+          number = -20;
+        });
         break;
       default:
     }
@@ -46,9 +52,33 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   }
 
   @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("COUNTER"),
+      ),
+      body: Center(
+        child: Text(
+          "$number",
+          style: TextStyle(
+            fontSize: 35,
+          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            number++;
+          });
+        },
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
